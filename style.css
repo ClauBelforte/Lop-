@@ -1,0 +1,24 @@
+.column-1{
+    background-image: url(laundry.webp);
+    background-position: center;
+    min-height: 400px;
+    width: 33.3%;
+}
+.column-2{
+    background-image: url(living.webp);
+    min-height: 400px;
+    background-position: center;
+    width: 33.3%;
+}
+.column-3{
+    background-image: url(kitchen.webp);
+    min-height: 400px;
+    background-position: center;
+    width: 33.3%;
+}
+.row-1{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+

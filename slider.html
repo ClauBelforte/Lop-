@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+</head>
+<body>
+   <div class="slider-container">
+       <div class="slider">
+           <a href="https://loptraining24-02.myshopify.com/pages/product-grid">
+            <div class="row-1">
+                <div class="banners column-1">
+                    <h3 class="title1">
+                        lorem ipsum
+                    </h3>
+                </div>
+
+                <div class="banners column-2">
+                    <h3 class="title1">
+                        lorem ipsum
+                    </h3>
+                </div>
+
+                <div class="banners column-3">
+                    <h3 class="title1">
+                        lorem ipsum
+                    </h3>
+                </div>
+           </div>
+           <div class="row-mobile">
+            <div class="banners column-1">
+                <h3 class="title1">
+                    lorem ipsum
+                </h3>
+            </div>
+
+            <div class="banners column-2">
+                <h3 class="title1">
+                    lorem ipsum
+                </h3>
+            </div>
+
+            <div class="banners column-3">
+                <h3 class="title1">
+                    lorem ipsum
+                </h3>
+            </div>
+        </a>
+       </div>
+       </div>
+       <div class="slick-controls">
+           <div class="slick-prev"></div>
+           <div class="slick-dots"></div>
+           <div class="slick-next"></div>
+       </div>
+   </div>
+   
+   <style>
+        a{
+            text-decoration: none;
+        }
+
+        .title1 {
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            z-index: 9999;
+        }
+
+        .banners {
+            position: relative;
+            min-height: 400px;
+            width: 31%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Overlay */
+        .banners::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .column-1 {
+            background-image: url(https://cdn.shopify.com/s/files/1/0853/4133/9939/files/laundry.webp?v=1710997361);
+        }
+
+        .column-2 {
+            background-image: url(https://cdn.shopify.com/s/files/1/0853/4133/9939/files/living.webp?v=1710997361);
+        }
+
+        .column-3 {
+            background-image: url(https://cdn.shopify.com/s/files/1/0853/4133/9939/files/tablet-kitchen.webp?v=1710997361);
+        }
+
+        .row-1 {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+        }
+    @media screen and (max-width:600px){
+        .title1 {
+            margin-bottom: 60px;
+        }
+        .row-1{
+            display: none;
+        }
+         /* slick carrusel */
+         .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slick-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 9999;
+        }
+
+        .slick-prev,
+        .slick-next {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            background-image: url('https://www.svgrepo.com/show/27797/right-arrow.svg');
+            background-size: cover;
+        }
+        .slick-prev{
+            background-image:url('https://www.svgrepo.com/show/238491/left-arrow-next.svg')
+        }
+
+        .slick-prev {
+            background-position: left center;
+            margin-left: 10px;
+        }
+
+        .slick-next {
+            background-position: right center;
+            margin-right: 10px;
+        }
+
+        .slick-dots {
+            position: absolute;
+            bottom: 20px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            list-style-type: none;
+            padding: 0;
+            z-index: 9999;
+        }
+
+        .slick-dots li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .slick-dots li button {
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            padding: 5px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .slick-dots li.slick-active button {
+            background-color: gray;
+        }
+        .slick-initialized .slick-slide{
+            display: flex;
+        }
+        /*end slick carrusel */
+    }
+    @media screen and (min-width:600px){
+        .row-mobile{
+            display: none;
+        }
+    }
+   </style>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   <script>
+    $(document).ready(function(){
+        $('.row-mobile').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+
+        // Custom navigation controls
+        $('.slick-prev').click(function(){
+            $('.row-1').slick('slickPrev');
+        });
+
+        $('.slick-next').click(function(){
+            $('.row-1').slick('slickNext');
+        });
+    });
+   </script>
+</body>
+</html>

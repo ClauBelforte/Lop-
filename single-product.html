@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<style>
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+    body{
+        font-family: "Montserrat";
+    }
+    .single-product{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .container-product{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        max-width: 90%;
+        flex-wrap: wrap;
+    }
+    .product-image {
+        margin-right: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        
+    }
+
+    .product-description {
+        flex: 1;
+        color: #5E5E5E;
+    }
+
+    .product-description h1{
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .product-description h3{
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 0px;
+    }
+
+    .thumbnail, .large-image{
+        border:1px solid #C7C7C7;
+        max-width: 100%;
+    }
+    .product-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 10px;
+       
+    }
+    .product-gallery img {
+        width: auto;
+        height: 150px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        border:1px solid #C7C7C7;
+    }
+
+    /* Estilos para los botones */
+    .first-row, .second-row{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .add-to-cart-button {
+        background-color: #233655;
+        color: white;
+        padding: 10px 50px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-left: 10px;
+        height: 35px;
+    }
+    .cuotas-label{
+        font-size: 14px;
+        margin-top: 3px;
+        margin-bottom: 80px;
+    }
+    .calculate-shipping-button {
+        background-color: #4266a2;
+        color: white;
+        padding: 10px 50px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-left: 10px;
+    }
+    .add-to-cart-button:hover {
+        background-color: #4266a2;
+    }
+    /* Estilos para los inputs  */
+    .quantity {
+        width: 100px;
+        padding: 0px;
+    }
+    .postal-code {
+        width: 50%;
+        border: 1px solid #C7C7C7;
+        padding: 9px;
+    }
+    .second-row{
+        margin-top: 10px;
+    }
+    .price {
+        font-weight: 700;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .quantity-control {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    align-items: flex-end;
+  }
+
+  .quantity-control input.quantity {
+    width: 30px;
+    text-align: center;
+    border: none;
+    border-top: 1px solid #233655;
+    border-bottom: 1px solid #233655;
+    padding: 9px
+    
+  }
+
+  .quantity-control button {
+    background: transparent;
+    color: #233655;
+    border: 1px solid #233655;
+    cursor: pointer;
+    padding: 9px 10px;
+    margin: 0;
+    
+  }
+  .quantity-label{
+    font-size: 13px;
+    line-height: 2.2em;
+  }
+
+    /*estilos blurb  */
+    .blurb{
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #5E5E5E;
+    }
+    .blurb-container{
+        padding-top: 30px;
+    }
+    .blurb-text p, .blurb-text h4{
+        margin: 10px !important;
+    }
+    .blurb-image{
+        height: 40px;
+    }
+
+    /*estilos label  */
+    .free-shipping {
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    font-weight: 500;
+    left: 0px; 
+    background-color: #46962B;
+    bottom: 15px; 
+  }
+    @media screen and (max-width:600px){
+        .product-image {
+            flex-direction: column;
+        align-items: center; 
+        }
+        .product-gallery {
+        display: none
+        ;
+        }
+        .cuotas-label {
+            margin-bottom: 40px;
+        }
+        .product-image {
+            margin: 0;
+        }
+        .container-product {
+            padding: 0;
+        }
+    }
+</style>
+<body>
+    <div class="single-product">
+        <div class="container-product">
+            <div class="product-image">
+                <img id="mainImage" class="large-image" src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/freidora.jpg?v=1710997361" alt="Product Image">
+                <div class="product-gallery">
+                    <img src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/freidora.jpg?v=1710997361" class="thumbnail" onclick="changeImage('freidora.jpg')">
+                    <img src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/freidora.jpg?v=1710997361" class="thumbnail" onclick="changeImage('freidora.jpg')">
+                    <img src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/freidora.jpg?v=1710997361" class="thumbnail" onclick="changeImage('freidora.jpg')">
+                    <img src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/freidora.jpg?v=1710997361" class="thumbnail" onclick="changeImage('freidora.jpg')">
+                </div>
+            </div>
+            <div class="product-description">
+                <h1>Freidora 2332A</h1>
+                <h3>VKMA 05012 A</h3>
+                <div class="label free-shipping">ENVIO GRATIS</div>
+                <p class="price">$468.412</p>
+                <p class="cuotas-label">Hasta 6 cuotas sin interés</p>
+                <div class="first-row">
+                    <div class="quantity-row">
+                        <span class="quantity-label">Cantidad:</span>
+                        <div class="quantity-control">
+                            <button id="decrease-btn">-</button>
+                            <input class="quantity" type="number" value="1">
+                            <button id="increase-btn">+</button>
+                         </div>
+                    </div>
+                   <button class="add-to-cart-button"> <a href="https://www.lop.global ">AGREGAR AL CARRITO</a></button>
+                </div>
+                <div class="second-row">
+                    <input class="postal-code" type="text">
+                    <button class="calculate-shipping-button"><a href="https://www.lop.global "> CALCULAR ENVÍO</a></button>
+                </div>
+                <div class="blurb-container">
+                    <div class="blurb">
+                        <img class="blurb-image" src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/delivery-truck.png?v=1710999971" alt="Delivery Truck">
+                        <div class="blurb-text">
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="blurb">
+                        <img class="blurb-image" src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/box.png?v=1710999971" alt="Box">
+                        <div class="blurb-text">
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="blurb">
+                        <img class="blurb-image" src="https://cdn.shopify.com/s/files/1/0853/4133/9939/files/shop.png?v=1710999971" alt="Shop">
+                        <div class="blurb-text">
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+<script>
+    function changeImage(imageSrc) {
+        document.getElementById('mainImage').src = imageSrc;
+    }
+
+    /*boton cantidad*/
+    document.getElementById('decrease-btn').addEventListener('click', function() {
+    var input = document.querySelector('.quantity');
+    var value = parseInt(input.value, 10);
+    value = isNaN(value) ? 0 : value;
+    value = value <= 1 ? 1 : value - 1;
+    input.value = value;
+  });
+
+  document.getElementById('increase-btn').addEventListener('click', function() {
+    var input = document.querySelector('.quantity');
+    var value = parseInt(input.value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    input.value = value;
+  });
+</script>
+
+</body>
+</html>
